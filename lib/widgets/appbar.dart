@@ -13,7 +13,8 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      actions: const [],
+      // actions: const [],
+      automaticallyImplyLeading: false,
       backgroundColor: AppColors.black,
       elevation: 0,
       title: SizedBox(

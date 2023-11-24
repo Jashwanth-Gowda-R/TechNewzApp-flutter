@@ -41,7 +41,7 @@ class _MySearchBarState extends State<MySearchBar> {
                       border: InputBorder.none),
                 ))
               ],
-            )),
+            ),),
           ),
         ),
         InkWell(

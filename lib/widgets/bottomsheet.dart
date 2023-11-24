@@ -27,7 +27,7 @@ void showMyBottomSheet(
 _launchURL(String url) async {
   var uri = Uri.parse(url);
   if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
+    await launchUrl(uri, mode: LaunchMode.inAppBrowserView);
   } else {
     throw 'Could not launch $url';
   }
@@ -73,6 +73,7 @@ class MyBottomSheetLayout extends StatelessWidget {
                     text: 'Read Full Article',
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
+                        print('pressed');
                         _launchURL(url);
                       },
                     style: GoogleFonts.lato(

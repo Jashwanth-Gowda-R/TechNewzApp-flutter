@@ -10,9 +10,10 @@ Future<List> fetchNews() async {
     'https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=100&apiKey=${Constants.apiKey}&q=${MySearchBar.searchcontroller.text}',
   );
   var response = await http.get(url);
+  print(response);
   if (response.statusCode == 200) {
-    final result = json.decode(response.body);
-    debugPrint(result);
+    Map result = json.decode(response.body);
+    debugPrint('$result');
     return result['articles'];
   } else {
     throw 'Failed to get data';
