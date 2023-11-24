@@ -7,14 +7,14 @@ import 'package:tech_newz_app/widgets/widgets.dart';
 
 class NewsBox extends StatelessWidget {
   final String imageurl, title, time, description, url;
-  const NewsBox(
-      {Key? key,
-      required this.imageurl,
-      required this.title,
-      required this.time,
-      required this.description,
-      required this.url})
-      : super(key: key);
+  const NewsBox({
+    Key? key,
+    required this.imageurl,
+    required this.title,
+    required this.time,
+    required this.description,
+    required this.url,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,14 +39,17 @@ class NewsBox extends StatelessWidget {
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: imageProvider, fit: BoxFit.cover),
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.yellow),
+                      image: DecorationImage(
+                          image: imageProvider, fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.yellow,
+                    ),
                   ),
                   placeholder: (context, url) =>
                       CircularProgressIndicator(color: AppColors.primary),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(
+                    Icons.error,
+                  ),
                 ),
                 const SizedBox(width: 8),
                 Expanded(
@@ -55,10 +58,16 @@ class NewsBox extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ModifiedText(
-                          color: AppColors.white, size: 16, text: title),
+                        color: AppColors.white,
+                        size: 16,
+                        text: title,
+                      ),
                       const SizedBox(height: 5),
                       ModifiedText(
-                          color: AppColors.lightwhite, size: 12, text: time),
+                        color: AppColors.lightwhite,
+                        size: 12,
+                        text: time,
+                      ),
                     ],
                   ),
                 ),

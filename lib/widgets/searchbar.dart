@@ -24,24 +24,28 @@ class _MySearchBarState extends State<MySearchBar> {
             margin: const EdgeInsets.all(10),
             padding: const EdgeInsets.only(left: 20),
             decoration: BoxDecoration(
-                color: AppColors.darkgrey,
-                borderRadius: BorderRadius.circular(50)),
+              color: AppColors.darkgrey,
+              borderRadius: BorderRadius.circular(50),
+            ),
             child: Center(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(width: 10),
-                Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(width: 10),
+                  Expanded(
                     child: TextField(
-                  controller: MySearchBar.searchcontroller,
-                  decoration: InputDecoration(
-                      hintText: 'Search a Keyword or a Phrase',
-                      hintStyle: GoogleFonts.lato(),
-                      border: InputBorder.none),
-                ))
-              ],
-            ),),
+                      controller: MySearchBar.searchcontroller,
+                      decoration: InputDecoration(
+                        hintText: 'Search a Keyword or a Phrase',
+                        hintStyle: GoogleFonts.lato(),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
         ),
         InkWell(
@@ -53,7 +57,9 @@ class _MySearchBarState extends State<MySearchBar> {
             width: 45,
             height: 45,
             decoration: BoxDecoration(
-                color: AppColors.darkgrey, shape: BoxShape.circle),
+              color: AppColors.darkgrey,
+              shape: BoxShape.circle,
+            ),
             child: Icon(
               Icons.search,
               color: AppColors.white,

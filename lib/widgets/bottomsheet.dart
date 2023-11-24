@@ -6,12 +6,20 @@ import 'package:tech_newz_app/widgets/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void showMyBottomSheet(
-    BuildContext context, String title, String description, imageurl, url) {
+  BuildContext context,
+  String title,
+  String description,
+  imageurl,
+  url,
+) {
   showBottomSheet(
       backgroundColor: Colors.black,
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
       elevation: 20,
       context: context,
       builder: (context) {
@@ -38,13 +46,14 @@ _launchURL(String url) async {
 class MyBottomSheetLayout extends StatelessWidget {
   final String title, description, imageurl, url;
 
-  const MyBottomSheetLayout(
-      {Key? key,
-      required this.title,
-      required this.description,
-      required this.imageurl,
-      required this.url})
-      : super(key: key);
+  const MyBottomSheetLayout({
+    Key? key,
+    required this.title,
+    required this.description,
+    required this.imageurl,
+    required this.url,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -61,8 +70,11 @@ class MyBottomSheetLayout extends StatelessWidget {
           BottomSheetImage(imageurl: imageurl, title: title),
           Container(
             padding: const EdgeInsets.all(10),
-            child:
-                ModifiedText(text: description, size: 16, color: Colors.white),
+            child: ModifiedText(
+              text: description,
+              size: 16,
+              color: Colors.white,
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(10),
