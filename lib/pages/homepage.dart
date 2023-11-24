@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_newz_app/widgets/appbar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,9 +11,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      
+    return const Scaffold(
+      appBar: MyAppbar(),
     );
   }
 }
